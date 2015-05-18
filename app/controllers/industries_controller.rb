@@ -4,8 +4,9 @@ class IndustriesController < ApplicationController
   end
 
   def new
+  @industry = Industry.new
   end
 
-  
+
 
 end
