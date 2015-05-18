@@ -18,14 +18,12 @@
 
 <h3>Affiliated Companies</h3>
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-    </tr>
-  </thead>
   <tbody>
+    <%= @industries.each do |industry| %>
     <tr>
+      <td> <%= industry.companies.name %></td>
     </tr>
+    <% end %>
   </tbody>
 </table>
 </div>

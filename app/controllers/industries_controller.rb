@@ -2,6 +2,8 @@ class IndustriesController < ApplicationController
 
   def index
     @industries = Industry.all
+    @companies = Company.all
+
   end
 
   def new
@@ -21,6 +23,10 @@ class IndustriesController < ApplicationController
 
   def show
     @industry = Industry.find(params[:id])
+    @companies = Company.all
+
+    @industry.companies = @companies
+
   end
 
   def edit

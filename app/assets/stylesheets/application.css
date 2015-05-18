@@ -13,7 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-.industry {
-  border: 2px black solid
-}
