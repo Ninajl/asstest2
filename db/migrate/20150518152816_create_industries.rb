@@ -4,7 +4,7 @@ class CreateIndustries < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.belongs_to :company
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

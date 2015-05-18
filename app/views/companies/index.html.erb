@@ -1,3 +1,18 @@
 <h1>Companies</h1>
 
 <%= link_to "Add Company", new_company_path %>
+
+<% @companies.each do |company| %>
+<p>
+  <%= link_to company.name, company_path(company) %>
+</p>
+<p>
+  <%= company.price %>
+</p>
+<p>
+  <%= company.created_at %>
+</p>
+<p>
+  <%= company.updated_at %>
+</p>
+<% end %>

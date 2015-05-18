@@ -10,6 +10,7 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
+    @company.industry_id = ind
     if @company.save
       redirect_to company_path(@company), notice: "Company was created successfully"
     else
@@ -19,6 +20,8 @@ class CompaniesController < ApplicationController
 
   def show
     @company = Company.find(params[:id])
+    @company.industry_id = params[:industry_params]
+    @industries = @company.industries
   end
 
   private

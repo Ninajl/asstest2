@@ -10,6 +10,8 @@ class IndustriesController < ApplicationController
 
   def create
     @industry = Industry.new(industry_params)
+    @companies = Company.where(id: params[:company_params])
+    @industry.companies = @companies
     if @industry.save
       redirect_to industry_path(@industry), notice: "Industry was created successfully"
     else
@@ -42,6 +44,6 @@ class IndustriesController < ApplicationController
 
   private
   def industry_params
-    params.require(:industry).permit(:name, :description)
+    params.require(:industry).permit(:name, :description, :company_id)
   end
 end

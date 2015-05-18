@@ -1,4 +1,6 @@
 class Company < ActiveRecord::Base
-  belongs_to :industry
-  has_many :industries
+
+  has_and_belongs_to_many :industries
+  validates_presence_of :name, :description, :price
+
 end

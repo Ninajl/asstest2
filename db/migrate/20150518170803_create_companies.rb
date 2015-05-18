@@ -5,7 +5,7 @@ class CreateCompanies < ActiveRecord::Migration
       t.text :description
       t.integer :price
       t.belongs_to :industry
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
