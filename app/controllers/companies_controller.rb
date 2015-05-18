@@ -4,4 +4,8 @@ class CompaniesController < ApplicationController
     @companies = Company.all
   end
 
+  def new
+    @company = Company.new
+  end
+
 end
