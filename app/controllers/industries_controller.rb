@@ -34,6 +34,12 @@ class IndustriesController < ApplicationController
     end
   end
 
+  def destroy
+    @industry = Industry.find(params[:id])
+    @industry.destroy
+    redirect_to industries_path, notice: "Industry was deleted"
+  end
+
   private
   def industry_params
     params.require(:industry).permit(:name, :description)
