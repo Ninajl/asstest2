@@ -17,8 +17,10 @@ ActiveRecord::Schema.define(version: 20150518152816) do
   enable_extension "plpgsql"
 
   create_table "industries", force: :cascade do |t|
-    t.string "name"
-    t.text   "description"
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

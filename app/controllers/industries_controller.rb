@@ -1,6 +1,7 @@
 class IndustriesController < ApplicationController
 
   def index
+    @industries = Industry.all
   end
 
   def new
@@ -13,6 +14,23 @@ class IndustriesController < ApplicationController
       redirect_to industry_path(@industry), notice: "Industry was created successfully"
     else
       render :new
+    end
+  end
+
+  def show
+    @industry = Industry.find(params[:id])
+  end
+
+  def edit
+    @industry = Industry.find(params[:id])
+  end
+
+  def update
+    @industry = Industry.find(params[:id])
+    if @industry.update(industry_params)
+      redirect_to industries_path, notice: "Industry was updated successfully"
+    else
+      render :edit
     end
   end
 
