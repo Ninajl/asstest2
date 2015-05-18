@@ -24,6 +24,11 @@ class CompaniesController < ApplicationController
     @industries = @company.industries
   end
 
+  def edit
+    @company = Company.find(params[:id])
+  end
+
+  
   private
 
   def company_params
