@@ -1,0 +1,33 @@
+<p>
+  <%= @company.name %>
+</p>
+<p>
+  <%= @company.description %>
+</p>
+<p>
+  <%= @company.price %>
+</p>
+<p>
+  <%= @company.created_at %>
+</p>
+<p>
+  <%= @company.updated_at %>
+</p>
+<!-- <%= link_to 'Edit', edit_company_path(@company) %>
+<%= link_to 'Delete', company_path(@company), method: :delete, confirm:'Are you sure?' %> -->
+<br>
+<h3>Affiliated Industries</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= @industries.each do |company| %>
+    <tr>
+      <td> <%= company.name %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

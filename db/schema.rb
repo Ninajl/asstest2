@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150518170803) do
   create_table "industries", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
